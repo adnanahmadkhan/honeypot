@@ -1,8 +1,10 @@
 from utils.logger import LOG
 import extract
+import transform
 import json
 from os.path import join, dirname
 from utils import util
+from math import isnan
 
 # Global variables for interacting with filesystems
 dirname = dirname(__file__)
@@ -19,15 +21,25 @@ if __name__ == "__main__":
     """
 
     # extract file from remote source
-    filename = extract.extract_html(env["file_uri"])
+    # filename = extract.extract_html(env["file_uri"])
+    filename = "codechallenge_data.json"
     
     # convert to dictionary
     with open(join(downloads_folder, filename)) as json_file:
         data = json.load(json_file)
 
-    for i in data:
-        if i["data"]["category"] is None:
-            print(i["source_id"])
+    # apply transformation pipeline
+    data = transform.convert_to_floats(data, "data,length")
+    data = transform.remove_nans(data, "data,length")
+    data = transform.remove_zeros(data, "data,length")
+    data = transform.remove_empty_strings(data, "data,length")
+    data = transform.remove_empty_strings(data, "data,category")
+    data = transform.apply_scale_by_category(data)
 
+
+    # 
+    
+
+    
     
     
