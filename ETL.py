@@ -1,6 +1,7 @@
 from utils.logger import LOG
 import extract
 import transform
+import load
 import json
 from os.path import join, dirname
 from utils import util
@@ -37,7 +38,10 @@ if __name__ == "__main__":
     data = transform.apply_scale_by_category(data)
 
 
-    # 
+    # load data to SQLite databases
+    table_name = ""
+    load.load_into_table(data, table_name)
+
     
 
     

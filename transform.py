@@ -98,8 +98,6 @@ def apply_scale_by_category(data):
         scale = float(util.get_scale_by_category(con, cat)[0])
         i["scaled_legnth"] = scale * i["data"]["length"]
         results.append(i)
-        print(i)
-
     return results
 
 
