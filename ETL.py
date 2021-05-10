@@ -23,8 +23,8 @@ if __name__ == "__main__":
     """
 
     # extract file from remote source
-    # filename = extract.extract_html(env["file_uri"])
-    filename = "codechallenge_data.json"
+    filename = extract.extract_html(env["file_uri"])
+    # filename = "codechallenge_data.json"
     
     # convert to dictionary
     with open(join(downloads_folder, filename)) as json_file:
