@@ -17,7 +17,7 @@ def load_into_table(data):
         for i in data:
             cnt+=1
 
-            export.append((i["source_id"], i["data"]["name"], i["data"]["category"], i["data"]["length"], i["data"]["created_at"], i["scaled_legnth"],))
+            export.append((i["source_id"], i["data"]["name"], i["data"]["category"], i["data"]["length"], i["scaled_legnth"], i["data"]["created_at"],))
 
             # adding data in bulks
             if(cnt%100==0): 
