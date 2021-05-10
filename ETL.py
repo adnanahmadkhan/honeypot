@@ -16,10 +16,12 @@ if __name__ == "__main__":
     """
     Main function to be run
     """
-    filename = extract.extract_html(env["file_uri"])
-    df = extract.df_from_json(join(downloads_folder, filename))
 
-    print(df)
+    filename = extract.extract_html(env["file_uri"])
+    with open(join(downloads_folder, filename)) as json_file:
+        data = json.load(json_file)
+
+    print(dict(list(data.items())[:3]))
 
     
     
