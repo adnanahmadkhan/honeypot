@@ -21,7 +21,7 @@ if __name__ == "__main__":
     with open(join(downloads_folder, filename)) as json_file:
         data = json.load(json_file)
 
-    print(dict(list(data.items())[:3]))
+    print(data[:3])
 
     
     
