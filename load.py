@@ -24,7 +24,7 @@ def load_into_table(data):
                 con.executemany("insert into features(source_id, name, category, length, scaled_length, created_at) values (?,?,?,?,?,?)", export)
                 export = []
             
-    except Exception e:
+    except Exception as e:
         print(f"Exception occured :: {e}")
     finally:
         con.close()
