@@ -1,7 +1,7 @@
 import sqlite3
 from utils import util
 
-def load_into_table(data, table_name):
+def load_into_table(data):
     """
     Load data into table of desired name
     """
@@ -24,7 +24,7 @@ def load_into_table(data, table_name):
                 con.executemany("insert into features(source_id, name, category, length, scaled_length, created_at) values (?,?,?,?,?,?)", export)
                 export = []
             
-    except:
-        print("Exception occured")
+    except Exception e:
+        print(f"Exception occured :: {e}")
     finally:
         con.close()

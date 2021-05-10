@@ -39,8 +39,7 @@ if __name__ == "__main__":
 
 
     # load data to SQLite databases
-    table_name = ""
-    load.load_into_table(data, table_name)
+    load.load_into_table(data)
 
     
 
