@@ -25,7 +25,8 @@ if __name__ == "__main__":
     with open(join(downloads_folder, filename)) as json_file:
         data = json.load(json_file)
 
-    util.pretty(data)    
+    for i in data:
+        util.pretty(i)    
 
     
     
