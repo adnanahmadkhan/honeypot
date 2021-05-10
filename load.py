@@ -6,6 +6,7 @@ def load_into_table(data, table_name):
     Load data into table of desired name
     """
     con = util.get_connection("datawarehouse.db")
+    con.execute("create table features (source_id, name, category, length, scaled_length, created_at)")
 
     export = []
 
@@ -17,7 +18,7 @@ def load_into_table(data, table_name):
 
         # adding data in bulks
         if(cnt%100==0): 
-            con.executemany("insert into person(source_id, name, category, length, scaled_length, created_at) values (?,?,?,?,?,?)", export)
+            con.executemany("insert into features(source_id, name, category, length, scaled_length, created_at) values (?,?,?,?,?,?)", export)
             export = []
         
             
