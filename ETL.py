@@ -3,7 +3,6 @@ import extract
 import json
 from os.path import join, dirname
 import pandas as pd
-from odo import odo
 
 # Global variables for interacting with filesystems
 dirname = dirname(__file__)
