@@ -16,7 +16,9 @@ def load_into_table(data):
         cnt = 0
         for i in data:
             cnt+=1
-            export.append(tuple(i["source_id"], i["data"]["name"], i["data"]["category"], i["data"]["length"], i["scaled_legnth"], i["data"]["created_at"]))
+            tmp = (i["source_id"], i["data"]["name"], i["data"]["category"], i["data"]["length"], i["scaled_legnth"], i["data"]["created_at"])
+
+            export.append(tmp)
             # adding data in bulks
             if(cnt%500000==0): 
                 con.executemany("insert into features (source_id, name, category, length, scaled_length, created_at) values (?,?,?,?,?,?);", export)
