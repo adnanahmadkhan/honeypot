@@ -26,7 +26,7 @@ if __name__ == "__main__":
         data = json.load(json_file)
 
     for i in data:
-        util.pretty(i)    
+        print(i)    
 
     
     
