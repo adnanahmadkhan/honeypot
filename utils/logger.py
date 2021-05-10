@@ -1,9 +1,9 @@
 import logging as LOG
 from datetime import datetime
-from os.path import join, dirname
+from os.path import join, dirname, normpath
+from os import pardir 
 
-dirname = dirname(__file__)
-logs = join(dirname, 'logs')
+logs = normpath('logs')
 
 log_file = f'ETL_{datetime.strftime(datetime.now(), "%Y%m%d_%H%M%S")}.log'
 # setting LOG configurations
