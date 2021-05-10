@@ -13,7 +13,7 @@ def load_into_table(data):
         c.execute("create table features (source_id, name, category, length, scaled_length, created_at)")
 
         export = []
-        sql = """insert into features (source_id, name, category, length, scaled_length, created_at) values (%s,%s,%s,%s,%s,%s)"""
+        sql = """insert into features (source_id, name, category, length, scaled_length, created_at) values (?,?,?,?,?,?)"""
         cnt = 0
         for i in data:
             cnt+=1
