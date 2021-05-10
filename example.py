@@ -2,7 +2,6 @@ from utils.logger import LOG
 import extract
 import json
 from os.path import join, dirname
-from odo import odo
 import pandas as pd
 
 # Global variables for interacting with filesystems
