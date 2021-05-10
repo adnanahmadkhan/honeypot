@@ -31,7 +31,7 @@ def get_connection(db_file):
     except Error as e:
         print(e)
 
-    return conn
+    return connx    
 
 
 

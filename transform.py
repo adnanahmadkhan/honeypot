@@ -95,7 +95,7 @@ def apply_scale_by_category(data):
     results = []
     for i in data:
         cat = i["data"]["category"]
-        scale = float(util.get_scale_by_category(con, cat))
+        scale = float(util.get_scale_by_category(con, cat)[0])
         i["scaled_legnth"] = scale * i["data"]["value"]
     return row
 
