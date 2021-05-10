@@ -17,15 +17,17 @@ def load_into_table(data):
         cnt = 0
         for i in data:
             cnt+=1
-            tmp = (i["source_id"], i["data"]["name"], i["data"]["category"], i["data"]["length"], i["scaled_legnth"], i["data"]["created_at"],)
+            tmp = (str(i["source_id"]), str(i["data"]["name"]), str(i["data"]["category"]), str(i["data"]["length"]), str(i["scaled_legnth"]), str(i["data"]["created_at"]))
             export.append(tmp)
 
             # adding data in bulks
             if(cnt%500000==0): 
+                print(export[:10])
                 c.executemany(sql, export)
                 export = []
 
             # adding last bulk
+            print(export[:10])
             c.executemany(sql, export)
     except Exception as e:
         print(f"Exception occured :: {e}")
