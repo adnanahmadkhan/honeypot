@@ -1,4 +1,5 @@
 import sqlite3
+from utils import util
 
 def load_into_table(data, table_name):
     """
