@@ -31,5 +31,4 @@ def load_into_table(data):
     except Exception as e:
         print(f"Exception occured :: {e}")
     finally:
-        c.close()
         con.close()
