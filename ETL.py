@@ -6,6 +6,7 @@ import json
 from os.path import join, dirname
 from utils import util
 from math import isnan
+import csv
 
 # Global variables for interacting with filesystems
 dirname = dirname(__file__)
@@ -36,7 +37,6 @@ if __name__ == "__main__":
     data = transform.remove_empty_strings(data, "data,length")
     data = transform.remove_empty_strings(data, "data,category")
     data = transform.apply_scale_by_category(data)
-
 
     # load data to SQLite databases
     load.load_into_table(data)

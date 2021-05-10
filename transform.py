@@ -96,7 +96,14 @@ def apply_scale_by_category(data):
     for i in data:
         cat = i["data"]["category"]
         scale = float(util.get_scale_by_category(con, cat)[0])
+        
         i["scaled_legnth"] = scale * i["data"]["length"]
+        i["length"] = i["data"]["length"]
+        i["category"] = i["data"]["category"]
+        i["name"] = i["data"]["name"]
+        i["source_id"] = i["source_id"]
+        i["created_at"] = i["data"]["created_at"]
+
         results.append(i)
     return results
 
