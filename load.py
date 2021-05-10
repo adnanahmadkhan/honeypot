@@ -8,7 +8,8 @@ def load_into_table(data):
 
     try:
         con = util.get_connection("datawarehouse.db")
-        con.execute("create table if not exists features (source_id, name, category, length, scaled_length, created_at)")
+        con.execute("create table if exists features")
+        con.execute("create table features (source_id, name, category, length, scaled_length, created_at)")
 
         export = []
 
