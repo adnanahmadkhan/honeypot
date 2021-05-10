@@ -26,7 +26,8 @@ if __name__ == "__main__":
         data = json.load(json_file)
 
     for i in data:
-        print(i)    
+        if i["data"]["category"] is None:
+            print(i["source_id"])
 
     
     
