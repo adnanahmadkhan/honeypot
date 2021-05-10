@@ -21,10 +21,10 @@ def load_into_table(data):
             export.append(tmp)
             # adding data in bulks
             if(cnt%500000==0): 
-                con.executemany("insert into features (source_id, name, category, length, scaled_length, created_at) values (%s, %s,%s, %s,%s, %s);", export)
+                con.executemany("insert into features (source_id, name, category, length, scaled_length, created_at) values (%s,%s,%s,%s,%s,%s)", export)
                 export = []
             # adding last bulk
-            con.executemany("insert into features (source_id, name, category, length, scaled_length, created_at) values (%s, %s,%s, %s,%s, %s);", export)
+            con.executemany("insert into features (source_id, name, category, length, scaled_length, created_at) values (%s,%s,%s,%s,%s,%s)", export)
     except Exception as e:
         print(f"Exception occured :: {e}")
     finally:
