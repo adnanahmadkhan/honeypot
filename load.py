@@ -27,8 +27,8 @@ def load_into_table(data):
                 export = []
 
             # adding last bulk
-            print(export[:10])
             c.executemany(sql, export)
+            con.commit()
     except Exception as e:
         print(f"Exception occured :: {e}")
     finally:
